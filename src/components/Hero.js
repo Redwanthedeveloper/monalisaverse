@@ -135,7 +135,7 @@ const Hero = () => {
       <div className='absolute inset-0 flex justify-center items-center'>
         <div className='relative'>
           <div className='relative mx-auto mt-0 z-10'>
-            <h1 className='text-center sm:text-2xl lg:text-5xl font-bold text-primary stroke-current bg-black p-6 lg:p-12 rounded-lg'>
+            {/* <h1 className='text-center sm:text-2xl lg:text-5xl font-bold text-primary stroke-current bg-black p-6 lg:p-12 rounded-lg'>
               Pre-Mint for Whitelist users on 28th Dec 2021
             </h1>
             <div className='btn-gradient p-0.5 btn-animate w-56 mx-auto mt-5'>
@@ -146,8 +146,8 @@ const Hero = () => {
               >
                 <span>Join Presale</span>
               </a>
-            </div>
-            {/* <div className='relative text-center flex flex-col'>
+            </div> */}
+            <div className='relative text-center flex flex-col'>
               <h3 className='font-bold text-default lg:text-4xl'>
                 {data.totalSupply} / {CONFIG.MAX_SUPPLY}
               </h3>
@@ -159,6 +159,7 @@ const Hero = () => {
                 {' '}
                 {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
               </a>
+              +
               {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
                 <>
                   <p className='font-bold text-default text-sm lg:text-base'>
@@ -262,7 +263,7 @@ const Hero = () => {
                   )}
                 </>
               )}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
@@ -271,96 +272,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-// {
-//   Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-//     <>
-//       <p>The sale has ended.</p>
-//       <p>You can still find {CONFIG.NFT_NAME} on</p>
-
-//       <a target='_blank' href={CONFIG.MARKETPLACE_LINK}>
-//         {CONFIG.MARKETPLACE}
-//       </a>
-//     </>
-//   ) : (
-//     <>
-//       <p>
-//         1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}.
-//       </p>
-//       <p>Excluding gas fees.</p>
-//       {blockchain.account === '' || blockchain.smartContract === null ? (
-//         <>
-//           <p>Connect to the {CONFIG.NETWORK.NAME} network</p>
-
-//           <button
-//             onClick={(e) => {
-//               e.preventDefault();
-//               dispatch(connect());
-//               getData();
-//             }}
-//           >
-//             CONNECT
-//           </button>
-//           {blockchain.errorMsg !== '' ? (
-//             <>
-//               <p
-//                 style={{
-//                   textAlign: 'center',
-//                   color: 'var(--accent-text)',
-//                 }}
-//               >
-//                 {blockchain.errorMsg}
-//               </p>
-//             </>
-//           ) : null}
-//         </>
-//       ) : (
-//         <>
-//           <p>{feedback}</p>
-//           <>
-//             <StyledRoundButton
-//               style={{ lineHeight: 0.4 }}
-//               disabled={claimingNft ? 1 : 0}
-//               onClick={(e) => {
-//                 e.preventDefault();
-//                 decrementMintAmount();
-//               }}
-//             >
-//               -
-//             </StyledRoundButton>
-//             <p
-//               style={{
-//                 textAlign: 'center',
-//                 color: 'var(--accent-text)',
-//               }}
-//             >
-//               {mintAmount}
-//             </p>
-//             <s.SpacerMedium />
-//             <StyledRoundButton
-//               disabled={claimingNft ? 1 : 0}
-//               onClick={(e) => {
-//                 e.preventDefault();
-//                 incrementMintAmount();
-//               }}
-//             >
-//               +
-//             </StyledRoundButton>
-//           </>
-//           <>
-//             <button
-//               disabled={claimingNft ? 1 : 0}
-//               onClick={(e) => {
-//                 e.preventDefault();
-//                 claimNFTs();
-//                 getData();
-//               }}
-//             >
-//               {claimingNft ? 'BUSY' : 'BUY'}
-//             </button>
-//           </>
-//         </>
-//       )}
-//     </>
-//   );
-// }
